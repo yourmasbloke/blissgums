@@ -241,7 +241,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
       <div class="coupon-pill">
         <div>
           <div class="coupon-label" id="couponLabel">YOUR COUPON</div>
-          <div class="coupon-code" id="couponCode">FREEDELIVERY</div>
+          <div class="coupon-code" id="couponCode">...</div>
         </div>
         <div class="coupon-status" id="couponStatus">✓ Auto-applied</div>
       </div>
@@ -337,10 +337,10 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 </footer>
 
 <script>
-function generateCoupon(email) {
+function generateCoupon(seed) {
   let hash = 0;
-  for (let i = 0; i < email.length; i++) {
-    const char = email.charCodeAt(i);
+  for (let i = 0; i < seed.length; i++) {
+    const char = seed.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
     hash = hash & hash;
   }
@@ -354,19 +354,22 @@ function generateCoupon(email) {
   return 'BG-' + code;
 }
 
+// Generate unique session coupon on page load
+var sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+var sessionCoupon = generateCoupon(sessionId);
+document.getElementById('couponCode').textContent = sessionCoupon;
+
 document.getElementById('email').addEventListener('input', function() {
   var email = this.value.trim();
-  var labelEl = document.getElementById('couponLabel');
   var codeEl = document.getElementById('couponCode');
   var statusEl = document.getElementById('couponStatus');
   if (email && email.includes('@') && email.includes('.')) {
-    var code = generateCoupon(email);
-    labelEl.textContent = 'Coupon applied';
-    codeEl.textContent = code;
+    sessionCoupon = generateCoupon(email);
+    codeEl.textContent = sessionCoupon;
     statusEl.textContent = '✓ Active';
   } else {
-    labelEl.textContent = 'YOUR COUPON';
-    codeEl.textContent = 'FREEDELIVERY';
+    sessionCoupon = generateCoupon(sessionId);
+    codeEl.textContent = sessionCoupon;
     statusEl.textContent = '✓ Auto-applied';
   }
 });
@@ -376,7 +379,7 @@ function handleSubmit(e) {
   const first = document.getElementById('firstName').value.trim();
   const last = document.getElementById('lastName').value.trim();
   const email = document.getElementById('email').value.trim();
-  const coupon = (email && email.includes('@') && email.includes('.')) ? generateCoupon(email) : 'FREEDELIVERY';
+  const coupon = sessionCoupon;
   const name = encodeURIComponent(first + ' ' + last);
   const enc = encodeURIComponent(email);
   window.location.href = 'thank-you.html?name=' + name + '&email=' + enc + '&purchased=true&coupon=' + encodeURIComponent(coupon);
