@@ -18,8 +18,8 @@ from reportlab.lib import colors
 # ── Brand Constants ──────────────────────────────────────────
 BRAND_NAME = "BLISS GUMS"
 BRAND_NAME_MIXED = "Bliss Gums"
-WEBSITE = "blissgums.co"
-EMAIL = "info@blissgums.co"
+WEBSITE = "blissgums.com"
+EMAIL = "info@blissgums.com"
 COMPANY = "Bliss Gums LLC"
 LOCATION = "Wyoming, United States"
 PRIMARY_COLOR = HexColor("#059669")
@@ -283,7 +283,7 @@ CHAPTERS = [
             ("callout", "Important: Natural supplements are not a replacement for prescribed medications, a healthy diet, or regular exercise. They should be considered complementary approaches used alongside -- not instead of -- evidence-based medical care."),
             ("heading", "The Bliss Gums Approach"),
             ("text", "At Bliss Gums, we believe in supporting your wellness journey with carefully formulated products that complement a healthy lifestyle. Our approach focuses on quality ingredients backed by research, transparent labeling, and products designed to fit seamlessly into your daily routine."),
-            ("text", "Visit blissgums.co to learn more about our product line and how we can support your blood sugar management goals.")
+            ("text", "Visit blissgums.com to learn more about our product line and how we can support your blood sugar management goals.")
         ]
     },
     {
@@ -455,8 +455,8 @@ CHAPTERS = [
             ("heading", "Connect With Us"),
             ("contact_table", {
                 "rows": [
-                    ["Website", "blissgums.co"],
-                    ["Email", "info@blissgums.co"],
+                    ["Website", "blissgums.com"],
+                    ["Email", "info@blissgums.com"],
                     ["Location", "Wyoming, United States"],
                 ]
             }),
