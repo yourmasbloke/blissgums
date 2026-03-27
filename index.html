@@ -127,6 +127,38 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 .footer-bottom .legal { display: flex; gap: 16px; }
 .footer-bottom .legal a { font-size: 12px; color: #4b5563; text-decoration: none; }
 .footer-bottom .legal a:hover { color: #9ca3af; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 640px) {
+  .nav { padding: 0 16px; height: 56px; }
+  .nav-logo svg { width: 26px; height: 26px; }
+  .nav-wordmark { font-size: 16px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 12px; }
+  .nav-links a::after { display: none; }
+  .hero { padding: 48px 20px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .main { padding: 32px 16px; gap: 32px; }
+  .benefits { padding: 48px 16px; }
+  .benefits h2 { font-size: 22px; }
+  .footer { padding: 36px 16px; }
+  .footer-top { flex-direction: column; gap: 20px; }
+  .footer-links { gap: 12px; flex-wrap: wrap; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+  .footer-bottom .legal { justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .page { padding: 40px 20px 60px; }
+  .page h1 { font-size: 28px; }
+  .content { padding: 0 16px 60px; }
+  .page-header { padding: 32px 16px 24px; }
+  .page-header h1 { font-size: 28px; }
+  .checkout-card { padding: 24px 20px; }
+  .book-cover { max-width: 240px; }
+  .download-card { padding: 20px; flex-direction: column; text-align: center; }
+  .order-card { padding: 20px; }
+  .contact-card { padding: 24px 20px; }
+}
+
 </style>
 </head>
 <body>
