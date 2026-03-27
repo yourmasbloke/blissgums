@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Powered-By", "value": "BlissGums" },
+        { "key": "Server", "value": "BlissGums" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/generate_ebook.py", "destination": "/404" },
+    { "source": "/.git/:path*", "destination": "/404" },
+    { "source": "/.gitignore", "destination": "/404" }
+  ]
+}
