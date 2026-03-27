@@ -4,255 +4,233 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Digital Delivery is Ready — Redeem Your Free eBook - cillinhughespersonal@gmail.com - Gmail</title>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Google Sans', 'Roboto', Arial, sans-serif; background: #f6f8fc; color: #202124; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Google Sans',Roboto,Arial,sans-serif;background:#f6f8fc;color:#202124;-webkit-font-smoothing:antialiased;overflow:hidden;height:100vh}
 
-/* GMAIL TOP BAR */
-.gmail-topbar { height: 64px; background: #f6f8fc; display: flex; align-items: center; padding: 0 16px; border-bottom: none; }
-.gmail-hamburger { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%; }
-.gmail-hamburger svg { width: 20px; height: 20px; fill: #5f6368; }
-.gmail-logo { display: flex; align-items: center; gap: 2px; margin-left: 4px; margin-right: 32px; }
-.gmail-logo img { height: 40px; }
-.gmail-logo-text { font-size: 22px; color: #5f6368; font-weight: 400; letter-spacing: -0.5px; }
-.gmail-search { flex: 1; max-width: 720px; height: 48px; background: #eaf1fb; border-radius: 24px; display: flex; align-items: center; padding: 0 16px; gap: 12px; }
-.gmail-search svg { width: 20px; height: 20px; fill: #5f6368; flex-shrink: 0; }
-.gmail-search span { font-size: 16px; color: #5f6368; }
-.gmail-topbar-right { margin-left: auto; display: flex; align-items: center; gap: 8px; padding-left: 24px; }
-.gmail-icon-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.gmail-icon-btn svg { width: 20px; height: 20px; fill: #5f6368; }
-.gmail-avatar { width: 32px; height: 32px; background: #8e44ad; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 500; margin-left: 8px; }
+/* TOP BAR */
+.top{height:64px;background:#f6f8fc;display:flex;align-items:center;padding:0 8px 0 8px}
+.top-left{display:flex;align-items:center;width:256px;flex-shrink:0}
+.ico{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.ico:hover{background:rgba(0,0,0,0.06)}
+.ico svg{width:20px;height:20px;fill:#5f6368}
+.g-logo{display:flex;align-items:center;margin-left:4px;gap:0}
+.g-logo svg{height:40px;width:auto}
+.top-search{flex:1;max-width:720px;height:48px;background:#eaf1fb;border-radius:24px;display:flex;align-items:center;padding:0 8px 0 16px;gap:8px}
+.top-search .s-icon svg{width:20px;height:20px;fill:#5f6368}
+.top-search span{font-size:16px;color:#5f6368;flex:1}
+.top-search .filter-icon{margin-left:auto}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:0;padding-left:16px}
+.gemini-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid #dadce0;border-radius:20px;padding:6px 14px;font-size:13px;color:#5f6368;cursor:pointer;margin-right:8px;font-family:'Google Sans',Arial,sans-serif}
+.gemini-btn svg{width:16px;height:16px}
+.avatar{width:32px;height:32px;border-radius:50%;background:#8e44ad;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:500;cursor:pointer;margin-left:4px}
 
 /* LAYOUT */
-.gmail-body { display: flex; height: calc(100vh - 64px); }
+.layout{display:flex;height:calc(100vh - 64px)}
 
 /* SIDEBAR */
-.gmail-sidebar { width: 256px; padding: 8px 12px; flex-shrink: 0; overflow: hidden; }
-.gmail-compose-btn { display: flex; align-items: center; gap: 12px; background: #c2e7ff; border-radius: 16px; padding: 16px 24px; font-size: 14px; font-weight: 500; color: #001d35; margin-bottom: 12px; cursor: pointer; width: fit-content; }
-.gmail-compose-btn svg { width: 20px; height: 20px; }
-.gmail-sidebar-item { display: flex; align-items: center; gap: 16px; padding: 0 24px; height: 32px; border-radius: 0 16px 16px 0; font-size: 14px; color: #202124; cursor: pointer; margin-bottom: 1px; }
-.gmail-sidebar-item.active { background: #d3e3fd; font-weight: 700; color: #001d35; }
-.gmail-sidebar-item .count { margin-left: auto; font-size: 12px; font-weight: 700; }
-.gmail-sidebar-item svg { width: 20px; height: 20px; fill: #5f6368; flex-shrink: 0; }
-.gmail-sidebar-item.active svg { fill: #001d35; }
+.side{width:256px;padding:6px 12px 6px 0;flex-shrink:0;overflow-y:auto;display:flex;flex-direction:column}
+.compose{display:flex;align-items:center;gap:12px;background:#c2e7ff;border-radius:16px;padding:14px 22px;font-size:14px;font-weight:500;color:#001d35;margin:0 0 8px 12px;cursor:pointer;width:fit-content;border:none;font-family:'Google Sans',Arial,sans-serif}
+.compose svg{width:20px;height:20px;fill:#001d35}
+.si{display:flex;align-items:center;gap:18px;padding:0 12px 0 24px;height:32px;border-radius:0 16px 16px 0;font-size:14px;color:#202124;cursor:pointer;white-space:nowrap;position:relative}
+.si:hover{background:rgba(0,0,0,0.04)}
+.si.active{background:#d3e3fd;font-weight:700;color:#001d35}
+.si svg{width:20px;height:20px;fill:#5f6368;flex-shrink:0}
+.si.active svg{fill:#001d35}
+.si .cnt{margin-left:auto;font-size:12px;font-weight:700;color:#202124}
+.si.active .cnt{color:#001d35}
+.more-btn{display:flex;align-items:center;gap:18px;padding:0 12px 0 24px;height:32px;border-radius:0 16px 16px 0;font-size:14px;color:#5f6368;cursor:pointer}
+.more-btn svg{width:20px;height:20px;fill:#5f6368}
+.divider{height:1px;background:#e0e0e0;margin:8px 24px 8px 24px}
+.lbl-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 6px 24px;font-size:14px;color:#5f6368;font-weight:500}
+.lbl-header .plus{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lbl-header .plus:hover{background:rgba(0,0,0,0.06)}
+.lbl-header .plus svg{width:16px;height:16px;fill:#5f6368}
+.lbl{display:flex;align-items:center;gap:18px;padding:0 12px 0 24px;height:28px;border-radius:0 16px 16px 0;font-size:13px;color:#202124;cursor:pointer}
+.lbl:hover{background:rgba(0,0,0,0.04)}
+.lbl .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.lbl .cnt{margin-left:auto;font-size:12px;color:#5f6368}
 
-/* EMAIL VIEW */
-.gmail-main { flex: 1; background: #f6f8fc; padding: 0 16px 16px 0; overflow-y: auto; }
-.gmail-email-container { background: #ffffff; border-radius: 16px; max-width: 100%; min-height: calc(100vh - 80px); }
+/* MAIN */
+.main{flex:1;background:#f6f8fc;padding:0 16px 16px 8px;overflow-y:auto}
+.email-card{background:#fff;border-radius:16px;min-height:calc(100vh - 80px)}
 
-/* Email toolbar */
-.email-toolbar { display: flex; align-items: center; padding: 8px 8px; gap: 4px; border-bottom: 1px solid #e8eaed; }
-.email-toolbar .back-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-.email-toolbar .back-btn svg { width: 20px; height: 20px; fill: #5f6368; }
-.email-toolbar .toolbar-icons { margin-left: auto; display: flex; gap: 2px; }
+/* Toolbar */
+.etool{display:flex;align-items:center;padding:6px 12px;gap:2px}
+.etool .back svg{width:20px;height:20px;fill:#5f6368}
+.etool .right-icons{margin-left:auto;display:flex;gap:0}
 
 /* Subject */
-.email-subject { padding: 16px 72px 0; }
-.email-subject h2 { font-size: 22px; font-weight: 400; color: #202124; line-height: 1.35; }
-.email-subject .inbox-label { display: inline-block; background: #e8eaed; color: #5f6368; font-size: 11px; font-weight: 500; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 8px; }
+.subj{padding:12px 64px 0}
+.subj h2{font-size:22px;font-weight:400;color:#202124;line-height:1.35;display:inline}
+.subj .badge{display:inline-block;background:#e8eaed;color:#5f6368;font-size:11px;font-weight:500;padding:2px 6px;border-radius:4px;vertical-align:middle;margin-left:8px}
 
-/* Sender row */
-.email-sender { padding: 20px 72px 16px; display: flex; align-items: flex-start; gap: 14px; }
-.sender-avatar { width: 40px; height: 40px; background: #059669; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; font-weight: 600; flex-shrink: 0; }
-.sender-info { flex: 1; }
-.sender-name { font-size: 14px; font-weight: 500; color: #202124; }
-.sender-name span { font-size: 12px; font-weight: 400; color: #5f6368; margin-left: 4px; }
-.sender-to { font-size: 12px; color: #5f6368; margin-top: 2px; }
-.sender-date { font-size: 12px; color: #5f6368; white-space: nowrap; }
-.sender-actions { display: flex; gap: 8px; align-items: center; }
-.sender-actions svg { width: 20px; height: 20px; fill: #5f6368; cursor: pointer; }
+/* Sender */
+.sender{padding:16px 64px 12px;display:flex;align-items:flex-start;gap:12px}
+.s-avatar{width:40px;height:40px;background:#059669;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:600;flex-shrink:0}
+.s-info{flex:1}
+.s-name{font-size:14px;color:#202124}
+.s-name b{font-weight:500}
+.s-name span{color:#5f6368;font-size:12px;margin-left:2px}
+.s-to{font-size:12px;color:#5f6368;margin-top:1px}
+.s-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.s-date{font-size:12px;color:#5f6368;white-space:nowrap}
+.s-right svg{width:20px;height:20px;fill:#5f6368;cursor:pointer}
 
-/* Email body content */
-.email-body { padding: 8px 72px 32px; }
-.email-body-inner { max-width: 600px; }
+/* Email body */
+.ebody{padding:4px 64px 24px}
+.einner{max-width:600px}
 
-/* ===== EMAIL CONTENT — matches email-template.html exactly ===== */
-.em-wrapper { background: #ffffff; border-radius: 8px; overflow: hidden; }
-.em-nav { padding: 18px 32px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
-.em-nav-brand { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: 700; color: #111827; letter-spacing: -0.3px; }
-.em-nav-brand span { color: #059669; }
-.em-nav-url { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #9ca3af; }
-.em-hero { background-color: #059669; padding: 40px 32px; text-align: center; }
-.em-hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 700; color: #ffffff; line-height: 1.25; margin: 0 0 8px; }
-.em-hero p { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 14px; color: rgba(255,255,255,0.8); margin: 0; }
-.em-content { padding: 28px 32px 0; }
-.em-content p { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #374151; line-height: 1.65; margin: 0 0 12px; }
-.em-product { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; margin: 20px 32px 0; display: flex; gap: 16px; }
-.em-book-icon { width: 64px; flex-shrink: 0; background-color: #059669; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 8px; gap: 6px; }
-.em-book-icon .label { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 1.5px; }
-.em-book-icon .year { font-family: Arial, sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.9); }
-.em-product-info h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 700; color: #111827; line-height: 1.3; margin: 0 0 4px; }
-.em-product-info .meta { font-family: -apple-system, Arial, sans-serif; font-size: 12px; color: #059669; font-weight: 500; margin: 0 0 8px; }
-.em-product-info .price { font-family: -apple-system, Arial, sans-serif; margin: 0; }
-.em-product-info .price .old { text-decoration: line-through; color: #9ca3af; font-size: 13px; }
-.em-product-info .price .free { font-size: 20px; font-weight: 700; color: #111827; margin-left: 6px; }
-.em-coupon { margin: 16px 32px 0; border: 1.5px dashed #059669; border-radius: 6px; background: #f0fdf4; padding: 14px; text-align: center; }
-.em-coupon .label { font-family: -apple-system, Arial, sans-serif; font-size: 10px; font-weight: 600; color: #6b7280; letter-spacing: 1px; text-transform: uppercase; }
-.em-coupon .code { font-family: 'Courier New', monospace; font-size: 17px; font-weight: 700; color: #047857; letter-spacing: 2px; display: block; margin-top: 3px; }
-.em-cta { padding: 20px 32px 28px; }
-.em-cta a { display: block; background: #059669; color: #ffffff; font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 700; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; letter-spacing: 0.3px; }
-.em-footer { background: #111827; padding: 28px 32px; text-align: center; }
-.em-footer .brand { font-family: -apple-system, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; margin: 0 0 4px; }
-.em-footer .brand span { color: #059669; }
-.em-footer .tagline { font-family: -apple-system, Arial, sans-serif; font-size: 11px; color: #6b7280; margin: 0 0 16px; }
-.em-footer .links { font-family: -apple-system, Arial, sans-serif; font-size: 11px; margin: 0 0 16px; }
-.em-footer .links a { color: #9ca3af; text-decoration: none; }
-.em-footer .copy { font-family: -apple-system, Arial, sans-serif; font-size: 11px; color: #4b5563; border-top: 1px solid #1f2937; padding-top: 16px; line-height: 1.6; }
-.em-footer .copy a { color: #6b7280; }
+/* === EMAIL CONTENT (matches email-template.html) === */
+.en{padding:18px 32px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center}
+.en-b{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:700;color:#111827;letter-spacing:-0.3px}
+.en-b span{color:#059669}
+.en-u{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;color:#9ca3af}
+.eh{background:#059669;padding:40px 32px;text-align:center}
+.eh h1{font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;color:#fff;line-height:1.25;margin:0 0 8px}
+.eh p{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:14px;color:rgba(255,255,255,0.8);margin:0}
+.ec{padding:28px 32px 0}
+.ec p{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:15px;color:#374151;line-height:1.65;margin:0 0 12px}
+.ep{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:18px;margin:20px 32px 0;display:flex;gap:16px}
+.ep-icon{width:64px;flex-shrink:0;background:#059669;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;gap:6px}
+.ep-icon .l{font-family:Arial,sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1.5px}
+.ep-icon .y{font-family:Arial,sans-serif;font-size:11px;font-weight:600;color:rgba(255,255,255,0.9)}
+.ep-i h3{font-family:Georgia,'Times New Roman',serif;font-size:15px;font-weight:700;color:#111827;line-height:1.3;margin:0 0 4px}
+.ep-i .m{font-family:-apple-system,Arial,sans-serif;font-size:12px;color:#059669;font-weight:500;margin:0 0 8px}
+.ep-i .pr .old{text-decoration:line-through;color:#9ca3af;font-size:13px}
+.ep-i .pr .free{font-size:20px;font-weight:700;color:#111827;margin-left:6px}
+.ecoup{margin:16px 32px 0;border:1.5px dashed #059669;border-radius:6px;background:#f0fdf4;padding:14px;text-align:center}
+.ecoup .cl{font-family:-apple-system,Arial,sans-serif;font-size:10px;font-weight:600;color:#6b7280;letter-spacing:1px;text-transform:uppercase}
+.ecoup .cc{font-family:'Courier New',monospace;font-size:17px;font-weight:700;color:#047857;letter-spacing:2px;display:block;margin-top:3px}
+.ecta{padding:20px 32px 28px}
+.ecta a{display:block;background:#059669;color:#fff;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;text-align:center;padding:15px;border-radius:8px;text-decoration:none;letter-spacing:0.3px}
+.ef{background:#111827;padding:28px 32px;text-align:center}
+.ef .br{font-family:-apple-system,Arial,sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 4px}
+.ef .br span{color:#059669}
+.ef .tg{font-family:-apple-system,Arial,sans-serif;font-size:11px;color:#6b7280;margin:0 0 16px}
+.ef .lk{font-family:-apple-system,Arial,sans-serif;font-size:11px;margin:0 0 16px}
+.ef .lk a{color:#9ca3af;text-decoration:none}
+.ef .cp{font-family:-apple-system,Arial,sans-serif;font-size:11px;color:#4b5563;border-top:1px solid #1f2937;padding-top:16px;line-height:1.6}
+.ef .cp a{color:#6b7280}
+
+/* RIGHT SIDEBAR */
+.rside{width:56px;flex-shrink:0;background:#f6f8fc;display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:4px;border-left:1px solid #e0e0e0}
+.rside .rico{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.rside .rico:hover{background:rgba(0,0,0,0.06)}
+.rside .rico svg{width:20px;height:20px;fill:#5f6368}
+.rside .spacer{flex:1}
+.rside .plus-ico{margin-top:auto;margin-bottom:12px}
 </style>
 </head>
 <body>
 
-<!-- GMAIL TOP BAR -->
-<div class="gmail-topbar">
-  <div class="gmail-hamburger"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
-  <div class="gmail-logo">
-    <svg height="40" viewBox="0 0 75 24" width="75" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 14.4V9.6l-4.5 3V7.5L1.5 4.5v12a1.5 1.5 0 001.5 1.5h6l1.5-3.6z" fill="#4285f4"/><path d="M16.5 4.5H3A1.5 1.5 0 001.5 6l4.5 3 4.5-3v4.8l6-4.8z" fill="#ea4335"/><path d="M16.5 4.5l-6 4.8V14.4L12 18h6a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5z" fill="#34a853"/><path d="M19.5 7.5v5.1l-4.5-3 1.5 1.2V14.4L12 18h6a1.5 1.5 0 001.5-1.5V7.5z" fill="#fbbc04"/><text x="24" y="17.5" font-family="Google Sans,Arial,sans-serif" font-size="16" fill="#5f6368">Gmail</text></svg>
+<!-- TOP BAR -->
+<div class="top">
+  <div class="top-left">
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+    <div class="g-logo"><svg viewBox="0 0 109 40" height="40"><path d="M16 30.2C8 30.2 2 24.2 2 16.2S8 2.2 16 2.2c4.3 0 7.4 1.7 9.7 3.9l-2.7 2.7c-1.7-1.6-4-2.8-7-2.8-5.7 0-10.2 4.6-10.2 10.2S10.3 26.4 16 26.4c3.7 0 5.8-1.5 7.2-2.9 1.1-1.1 1.8-2.8 2.1-5h-9.3v-3.8H29c.2.8.3 1.8.3 2.9 0 3.4-1 7.7-4 10.7-2.9 3-6.6 4.9-11.3 4.9z" fill="#4285f4"/><path d="M40.5 26.4c-4.8 0-8.7-3.7-8.7-8.7 0-5.1 3.9-8.7 8.7-8.7 4.8 0 8.7 3.6 8.7 8.7 0 5-3.9 8.7-8.7 8.7zm0-14c-2.9 0-5 2.4-5 5.3 0 2.8 2.1 5.3 5 5.3s5-2.4 5-5.3c0-2.9-2.1-5.3-5-5.3z" fill="#ea4335"/><path d="M58.3 26.4c-4.8 0-8.7-3.7-8.7-8.7 0-5.1 3.9-8.7 8.7-8.7 4.8 0 8.7 3.6 8.7 8.7 0 5-3.9 8.7-8.7 8.7zm0-14c-2.9 0-5 2.4-5 5.3 0 2.8 2.1 5.3 5 5.3s5-2.4 5-5.3c0-2.9-2.1-5.3-5-5.3z" fill="#fbbc04"/><path d="M75.5 26.4c-4.5 0-8.3-3.8-8.3-8.7 0-5 3.7-8.7 8.3-8.7 2.5 0 4.4 1 5.8 2.3l-2.5 2.5c-.9-.9-2.1-1.5-3.3-1.5-2.8 0-5 2.4-5 5.4s2.2 5.3 5 5.3c1.8 0 2.9-.7 3.6-1.4.5-.5.9-1.4 1-2.5h-4.6v-3.5h8.2c.1.6.2 1.3.2 2 0 2.4-.7 5.4-2.8 7.5-2.1 2.1-4.7 3.3-7.6 3.3z" fill="#4285f4"/><path d="M93.8 10.2h3.8V26h-3.8V10.2z" fill="#34a853"/><path d="M100.8 26.4c-3.5 0-6.4-2.7-6.4-6.4 0-3.8 2.9-6.4 6.4-6.4 2 0 3.4.8 4.5 1.7v-1.4h3.5V26h-3.5v-1.4c-1 1-2.5 1.8-4.5 1.8zm.4-9.5c-1.9 0-3.3 1.5-3.3 3.1 0 1.7 1.4 3.2 3.3 3.2 1.8 0 3.3-1.5 3.3-3.2 0-1.6-1.5-3.1-3.3-3.1z" fill="#ea4335"/><rect x="86" y="2" width="3.8" height="24" rx="1.9" fill="#34a853"/></svg></div>
   </div>
-  <div class="gmail-search">
-    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+  <div class="top-search">
+    <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
     <span>Search mail</span>
+    <div class="filter-icon ico" style="width:36px;height:36px"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" fill="#5f6368"/></svg></div>
   </div>
-  <div class="gmail-topbar-right">
-    <div class="gmail-icon-btn"><svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg></div>
-    <div class="gmail-icon-btn"><svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg></div>
-    <div class="gmail-avatar">C</div>
+  <div class="top-right">
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg></div>
+    <div class="avatar">C</div>
   </div>
 </div>
 
-<!-- BODY -->
-<div class="gmail-body">
+<!-- LAYOUT -->
+<div class="layout">
 
-  <!-- SIDEBAR -->
-  <div class="gmail-sidebar">
-    <div class="gmail-compose-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-      Compose
-    </div>
-    <div class="gmail-sidebar-item active">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      Inbox
-      <span class="count">10,240</span>
-    </div>
-    <div class="gmail-sidebar-item">
-      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      Starred
-    </div>
-    <div class="gmail-sidebar-item">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-      Important
-    </div>
-    <div class="gmail-sidebar-item">
-      <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-      Sent
-    </div>
-  </div>
-
-  <!-- EMAIL VIEW -->
-  <div class="gmail-main">
-    <div class="gmail-email-container">
-
-      <!-- Toolbar -->
-      <div class="email-toolbar">
-        <div class="back-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
-        <div class="toolbar-icons">
-          <div class="gmail-icon-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="#5f6368"/></svg></div>
-          <div class="gmail-icon-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#5f6368"/></svg></div>
-          <div class="gmail-icon-btn"><svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#5f6368"/></svg></div>
-        </div>
-      </div>
-
-      <!-- Subject -->
-      <div class="email-subject">
-        <h2>Your Digital Delivery is Ready — Redeem Your Free eBook <span class="inbox-label">Inbox</span></h2>
-      </div>
-
-      <!-- Sender -->
-      <div class="email-sender">
-        <div class="sender-avatar">BG</div>
-        <div class="sender-info">
-          <div class="sender-name">Bliss Gums <span>&lt;info@blissgums.com&gt;</span></div>
-          <div class="sender-to">to me</div>
-        </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div class="sender-date">4:52 PM (0 minutes ago)</div>
-          <div class="sender-actions">
-            <svg viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== EMAIL CONTENT ===== -->
-      <div class="email-body">
-        <div class="email-body-inner">
-
-          <div class="em-wrapper">
-          <!-- Nav bar -->
-          <div class="em-nav">
-            <span class="em-nav-brand">Bliss<span>Gums</span></span>
-            <span class="em-nav-url">blissgums.com</span>
-          </div>
-
-          <!-- Hero -->
-          <div class="em-hero">
-            <h1>Your Digital Delivery is Ready</h1>
-            <p>Claim your complimentary resource below</p>
-          </div>
-
-          <!-- Content -->
-          <div class="em-content">
-            <p>Hi Sarah,</p>
-            <p>Your complimentary eBook is ready to be redeemed. A <strong style="color:#111827;">100% discount</strong> has been applied to your order automatically — no payment needed.</p>
-          </div>
-
-          <!-- Product card -->
-          <div class="em-product">
-            <div class="em-book-icon">
-              <span class="label">EBOOK</span>
-              <span class="year">2026</span>
-            </div>
-            <div class="em-product-info">
-              <h3>The Complete Guide to Managing High Blood Sugar</h3>
-              <div class="meta">PDF &bull; 12 pages &bull; 2026 Edition</div>
-              <div class="price"><span class="old">$1.58</span><span class="free">FREE</span></div>
-            </div>
-          </div>
-
-          <!-- Coupon -->
-          <div class="em-coupon">
-            <span class="label">Your Personal Coupon</span>
-            <span class="code">BG-7K4F2</span>
-          </div>
-
-          <!-- CTA -->
-          <div class="em-cta">
-            <a href="https://blissgums.com">REDEEM YOUR FREE EBOOK &rarr;</a>
-          </div>
-
-          <!-- Footer -->
-          <div class="em-footer">
-            <div class="brand">Bliss<span>Gums</span></div>
-            <div class="tagline">Natural Support for Healthy Blood Sugar &bull; blissgums.com</div>
-            <div class="links">
-              <a href="#">Privacy</a> &nbsp;&bull;&nbsp; <a href="#">Terms</a> &nbsp;&bull;&nbsp; <a href="#">Refund Policy</a> &nbsp;&bull;&nbsp; <a href="#">Support</a>
-            </div>
-            <div class="copy">
-              &copy; 2026 Bliss Gums LLC. Wyoming, United States.<br>
-              You received this because you signed up for a digital delivery. <a href="#">Unsubscribe</a>
-            </div>
-          </div>
-          </div><!-- end em-wrapper -->
-
-        </div>
-      </div>
-      <!-- ===== END EMAIL CONTENT ===== -->
-
-    </div>
-  </div>
-
+<!-- LEFT SIDEBAR -->
+<div class="side">
+  <button class="compose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Compose</button>
+  <div class="si active"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Inbox<span class="cnt">10,240</span></div>
+  <div class="si"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>Starred</div>
+  <div class="si"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Important</div>
+  <div class="si"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z"/></svg>Sent</div>
+  <div class="si"><svg viewBox="0 0 24 24"><path d="M18 6v12H6V6h12m0-2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><path d="M16 12H8v2h8v-2z"/></svg>Purchases<span class="cnt">432</span></div>
+  <div class="more-btn"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>More</div>
+  <div class="divider"></div>
+  <div class="lbl-header">Labels<div class="plus"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></div>
+  <div class="lbl"><span class="dot" style="background:#1a73e8"></span>Business</div>
+  <div class="lbl"><span class="dot" style="background:#1a73e8"></span>Meta Receipt</div>
+  <div class="lbl"><span class="dot" style="background:#f9ab00"></span>Personal</div>
+  <div class="lbl" style="padding-left:44px"><span class="dot" style="background:#f9ab00;width:8px;height:8px"></span>Payslips<span class="cnt">1</span></div>
+  <div class="lbl" style="padding-left:44px"><span class="dot" style="background:#f9ab00;width:8px;height:8px"></span>Receipts<span class="cnt">389</span></div>
+  <div class="lbl"><span class="dot" style="background:#a142f4"></span>WordPress</div>
+  <div class="more-btn" style="margin-top:4px"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>More</div>
 </div>
 
+<!-- MAIN EMAIL VIEW -->
+<div class="main">
+<div class="email-card">
+  <!-- Toolbar -->
+  <div class="etool">
+    <div class="ico back"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+    <div class="right-icons">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="#5f6368"/></svg></div>
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#5f6368"/></svg></div>
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#5f6368"/></svg></div>
+    </div>
+  </div>
+
+  <!-- Subject -->
+  <div class="subj">
+    <h2>Your Digital Delivery is Ready — Redeem Your Free eBook</h2>
+    <span class="badge">Inbox</span>
+  </div>
+
+  <!-- Sender -->
+  <div class="sender">
+    <div class="s-avatar">BG</div>
+    <div class="s-info">
+      <div class="s-name"><b>Bliss Gums</b> <span>&lt;info@blissgums.com&gt;</span></div>
+      <div class="s-to">to me</div>
+    </div>
+    <div class="s-right">
+      <div class="s-date">4:52 PM (0 minutes ago)</div>
+      <svg viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+    </div>
+  </div>
+
+  <!-- EMAIL CONTENT -->
+  <div class="ebody"><div class="einner">
+    <div class="en"><span class="en-b">Bliss<span>Gums</span></span><span class="en-u">blissgums.com</span></div>
+    <div class="eh"><h1>Your Digital Delivery is Ready</h1><p>Claim your complimentary resource below</p></div>
+    <div class="ec"><p>Hi Sarah,</p><p>Your complimentary eBook is ready to be redeemed. A <strong style="color:#111827">100% discount</strong> has been applied to your order automatically — no payment needed.</p></div>
+    <div class="ep">
+      <div class="ep-icon"><span class="l">EBOOK</span><span class="y">2026</span></div>
+      <div class="ep-i"><h3>The Complete Guide to Managing High Blood Sugar</h3><div class="m">PDF &bull; 12 pages &bull; 2026 Edition</div><div class="pr"><span class="old">$1.58</span><span class="free">FREE</span></div></div>
+    </div>
+    <div class="ecoup"><span class="cl">Your Personal Coupon</span><span class="cc">BG-7K4F2</span></div>
+    <div class="ecta"><a href="https://blissgums.com">REDEEM YOUR FREE EBOOK &rarr;</a></div>
+    <div class="ef">
+      <div class="br">Bliss<span>Gums</span></div>
+      <div class="tg">Natural Support for Healthy Blood Sugar &bull; blissgums.com</div>
+      <div class="lk"><a href="#">Privacy</a> &bull; <a href="#">Terms</a> &bull; <a href="#">Refund Policy</a> &bull; <a href="#">Support</a></div>
+      <div class="cp">&copy; 2026 Bliss Gums LLC. Wyoming, United States.<br>You received this because you signed up for a digital delivery. <a href="#">Unsubscribe</a></div>
+    </div>
+  </div></div>
+</div>
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<div class="rside">
+  <div class="rico"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg></div>
+  <div class="rico"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg></div>
+  <div class="rico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>
+  <div class="rico"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+  <div style="flex:1"></div>
+  <div class="rico plus-ico"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+</div>
+
+</div>
 </body>
 </html>
