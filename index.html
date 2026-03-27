@@ -84,7 +84,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 
 .coupon-pill { display: flex; align-items: center; justify-content: space-between; background: #f0fdf4; border: 1.5px dashed var(--primary); border-radius: 8px; padding: 10px 16px; margin-bottom: 24px; }
 .coupon-pill .coupon-label { font-size: 11px; color: var(--muted); font-weight: 500; }
-.coupon-pill .coupon-code { font-family: 'Courier New', monospace; font-size: 14px; font-weight: 700; color: var(--primary-dark); letter-spacing: 1px; }
+.coupon-pill .coupon-code { font-family: 'Courier New', monospace; font-size: 14px; font-weight: 700; color: var(--primary-dark); letter-spacing: 1px; background: transparent; border: none; outline: none; width: 120px; padding: 0; cursor: text; }
 .coupon-pill .coupon-status { font-size: 11px; color: var(--primary); font-weight: 600; }
 
 .form-group { margin-bottom: 14px; }
@@ -241,7 +241,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
       <div class="coupon-pill">
         <div>
           <div class="coupon-label">COUPON APPLIED</div>
-          <div class="coupon-code" id="couponCode">...</div>
+          <input type="text" class="coupon-code" id="couponCode" value="..." spellcheck="false" autocomplete="off">
         </div>
         <div class="coupon-status" id="couponStatus">✓ $0.00 checkout</div>
       </div>
@@ -357,7 +357,7 @@ function generateCoupon(seed) {
 // Generate unique session coupon on page load
 var sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 var sessionCoupon = generateCoupon(sessionId);
-document.getElementById('couponCode').textContent = sessionCoupon;
+document.getElementById('couponCode').value = sessionCoupon;
 
 document.getElementById('email').addEventListener('input', function() {
   var email = this.value.trim();
@@ -365,11 +365,11 @@ document.getElementById('email').addEventListener('input', function() {
   var statusEl = document.getElementById('couponStatus');
   if (email && email.includes('@') && email.includes('.')) {
     sessionCoupon = generateCoupon(email);
-    codeEl.textContent = sessionCoupon;
+    codeEl.value = sessionCoupon;
     statusEl.textContent = '✓ Active';
   } else {
     sessionCoupon = generateCoupon(sessionId);
-    codeEl.textContent = sessionCoupon;
+    codeEl.value = sessionCoupon;
     statusEl.textContent = '✓ Auto-applied';
   }
 });
