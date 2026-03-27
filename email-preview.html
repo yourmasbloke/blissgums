@@ -67,41 +67,38 @@ body { font-family: 'Google Sans', 'Roboto', Arial, sans-serif; background: #f6f
 .email-body { padding: 8px 72px 32px; }
 .email-body-inner { max-width: 600px; }
 
-/* ===== ACTUAL EMAIL CONTENT STYLES ===== */
-.em-wrapper { background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
-.em-nav { padding: 16px 28px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
-.em-nav-brand { font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 700; color: #111827; }
+/* ===== EMAIL CONTENT — matches email-template.html exactly ===== */
+.em-wrapper { background: #ffffff; border-radius: 8px; overflow: hidden; }
+.em-nav { padding: 18px 32px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
+.em-nav-brand { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: 700; color: #111827; letter-spacing: -0.3px; }
 .em-nav-brand span { color: #059669; }
-.em-nav-url { font-family: 'Inter', Arial, sans-serif; font-size: 11px; color: #9ca3af; }
-.em-hero { background: linear-gradient(135deg, #059669 0%, #047857 100%); padding: 40px 28px; text-align: center; }
-.em-hero-line { width: 40px; height: 2px; background: rgba(255,255,255,0.35); border-radius: 2px; margin: 0 auto 14px; }
-.em-hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3; margin-bottom: 8px; }
-.em-hero p { font-family: 'Inter', Arial, sans-serif; font-size: 13px; color: rgba(255,255,255,0.75); }
-.em-content { padding: 24px 28px 0; }
-.em-content p { font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
-.em-product { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin: 20px 28px 0; display: flex; gap: 16px; }
-.em-book-icon { width: 64px; flex-shrink: 0; background: linear-gradient(160deg, #065f46 0%, #059669 60%, #34d399 100%); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 6px; gap: 4px; }
-.em-book-icon .label { font-family: 'Inter', Arial, sans-serif; font-size: 8px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1.5px; }
-.em-book-icon .line { width: 18px; height: 1.5px; background: rgba(255,255,255,0.3); border-radius: 1px; }
-.em-book-icon .year { font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.8); }
-.em-product-info h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 700; color: #111827; line-height: 1.3; margin-bottom: 3px; }
-.em-product-info .meta { font-family: 'Inter', Arial, sans-serif; font-size: 11px; color: #059669; font-weight: 500; margin-bottom: 8px; }
-.em-product-info .price { font-family: 'Inter', Arial, sans-serif; }
+.em-nav-url { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #9ca3af; }
+.em-hero { background-color: #059669; padding: 40px 32px; text-align: center; }
+.em-hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 700; color: #ffffff; line-height: 1.25; margin: 0 0 8px; }
+.em-hero p { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 14px; color: rgba(255,255,255,0.8); margin: 0; }
+.em-content { padding: 28px 32px 0; }
+.em-content p { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #374151; line-height: 1.65; margin: 0 0 12px; }
+.em-product { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; margin: 20px 32px 0; display: flex; gap: 16px; }
+.em-book-icon { width: 64px; flex-shrink: 0; background-color: #059669; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 8px; gap: 6px; }
+.em-book-icon .label { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 1.5px; }
+.em-book-icon .year { font-family: Arial, sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.9); }
+.em-product-info h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 700; color: #111827; line-height: 1.3; margin: 0 0 4px; }
+.em-product-info .meta { font-family: -apple-system, Arial, sans-serif; font-size: 12px; color: #059669; font-weight: 500; margin: 0 0 8px; }
+.em-product-info .price { font-family: -apple-system, Arial, sans-serif; margin: 0; }
 .em-product-info .price .old { text-decoration: line-through; color: #9ca3af; font-size: 13px; }
-.em-product-info .price .free { font-size: 18px; font-weight: 700; color: #111827; margin-left: 6px; }
-.em-coupon { margin: 16px 28px 0; border: 1.5px dashed #059669; border-radius: 6px; background: #f0fdf4; padding: 12px; text-align: center; }
-.em-coupon .label { font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 600; color: #6b7280; letter-spacing: 1px; text-transform: uppercase; }
-.em-coupon .code { font-family: 'Courier New', monospace; font-size: 16px; font-weight: 700; color: #047857; letter-spacing: 2px; display: block; margin-top: 3px; }
-.em-cta { margin: 20px 28px 0; }
-.em-cta a { display: block; background: #059669; color: #ffffff; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 700; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; letter-spacing: 0.3px; }
-.em-spacer { height: 24px; }
-.em-footer { background: #111827; padding: 24px 28px; text-align: center; }
-.em-footer .brand { font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; margin-bottom: 3px; }
+.em-product-info .price .free { font-size: 20px; font-weight: 700; color: #111827; margin-left: 6px; }
+.em-coupon { margin: 16px 32px 0; border: 1.5px dashed #059669; border-radius: 6px; background: #f0fdf4; padding: 14px; text-align: center; }
+.em-coupon .label { font-family: -apple-system, Arial, sans-serif; font-size: 10px; font-weight: 600; color: #6b7280; letter-spacing: 1px; text-transform: uppercase; }
+.em-coupon .code { font-family: 'Courier New', monospace; font-size: 17px; font-weight: 700; color: #047857; letter-spacing: 2px; display: block; margin-top: 3px; }
+.em-cta { padding: 20px 32px 28px; }
+.em-cta a { display: block; background: #059669; color: #ffffff; font-family: -apple-system, 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 700; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; letter-spacing: 0.3px; }
+.em-footer { background: #111827; padding: 28px 32px; text-align: center; }
+.em-footer .brand { font-family: -apple-system, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; margin: 0 0 4px; }
 .em-footer .brand span { color: #059669; }
-.em-footer .tagline { font-family: 'Inter', Arial, sans-serif; font-size: 10px; color: #6b7280; margin-bottom: 14px; }
-.em-footer .links { font-family: 'Inter', Arial, sans-serif; font-size: 11px; margin-bottom: 14px; }
+.em-footer .tagline { font-family: -apple-system, Arial, sans-serif; font-size: 11px; color: #6b7280; margin: 0 0 16px; }
+.em-footer .links { font-family: -apple-system, Arial, sans-serif; font-size: 11px; margin: 0 0 16px; }
 .em-footer .links a { color: #9ca3af; text-decoration: none; }
-.em-footer .copy { font-family: 'Inter', Arial, sans-serif; font-size: 10px; color: #4b5563; border-top: 1px solid #1f2937; padding-top: 14px; line-height: 1.6; }
+.em-footer .copy { font-family: -apple-system, Arial, sans-serif; font-size: 11px; color: #4b5563; border-top: 1px solid #1f2937; padding-top: 16px; line-height: 1.6; }
 .em-footer .copy a { color: #6b7280; }
 </style>
 </head>
@@ -194,17 +191,13 @@ body { font-family: 'Google Sans', 'Roboto', Arial, sans-serif; background: #f6f
           <div class="em-wrapper">
           <!-- Nav bar -->
           <div class="em-nav">
-            <div>
-              <span style="display:inline-block;width:28px;height:28px;background:#059669;border-radius:50%;vertical-align:middle;margin-right:8px;text-align:center;line-height:28px;color:#d1fae5;font-size:12px;">&#9650;</span>
-              <span class="em-nav-brand">Bliss<span>Gums</span></span>
-            </div>
+            <span class="em-nav-brand">Bliss<span>Gums</span></span>
             <span class="em-nav-url">blissgums.com</span>
           </div>
 
           <!-- Hero -->
           <div class="em-hero">
-            <div class="em-hero-line"></div>
-            <h1>Your Digital Delivery<br>is Ready</h1>
+            <h1>Your Digital Delivery is Ready</h1>
             <p>Claim your complimentary resource below</p>
           </div>
 
@@ -218,7 +211,6 @@ body { font-family: 'Google Sans', 'Roboto', Arial, sans-serif; background: #f6f
           <div class="em-product">
             <div class="em-book-icon">
               <span class="label">EBOOK</span>
-              <span class="line"></span>
               <span class="year">2026</span>
             </div>
             <div class="em-product-info">
@@ -238,8 +230,6 @@ body { font-family: 'Google Sans', 'Roboto', Arial, sans-serif; background: #f6f
           <div class="em-cta">
             <a href="https://blissgums.com">REDEEM YOUR FREE EBOOK &rarr;</a>
           </div>
-
-          <div class="em-spacer"></div>
 
           <!-- Footer -->
           <div class="em-footer">
