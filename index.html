@@ -240,10 +240,10 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 
       <div class="coupon-pill">
         <div>
-          <div class="coupon-label" id="couponLabel">Enter your email below</div>
-          <div class="coupon-code" id="couponCode">—</div>
+          <div class="coupon-label" id="couponLabel">YOUR COUPON</div>
+          <div class="coupon-code" id="couponCode">FREEDELIVERY</div>
         </div>
-        <div class="coupon-status" id="couponStatus">Waiting...</div>
+        <div class="coupon-status" id="couponStatus">✓ Auto-applied</div>
       </div>
 
       <form id="checkoutForm" onsubmit="handleSubmit(event)">
@@ -365,9 +365,9 @@ document.getElementById('email').addEventListener('input', function() {
     codeEl.textContent = code;
     statusEl.textContent = '✓ Active';
   } else {
-    labelEl.textContent = 'Enter your email below';
-    codeEl.textContent = '—';
-    statusEl.textContent = 'Waiting...';
+    labelEl.textContent = 'YOUR COUPON';
+    codeEl.textContent = 'FREEDELIVERY';
+    statusEl.textContent = '✓ Auto-applied';
   }
 });
 
