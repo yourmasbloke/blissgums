@@ -10,7 +10,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_JUSTIFY
 from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
-    PageBreak, Frame, PageTemplate, BaseDocTemplate, KeepTogether
+    PageBreak, Frame, PageTemplate, BaseDocTemplate, KeepTogether,
+    Image
 )
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
@@ -35,6 +36,19 @@ MARGIN = 0.75 * inch
 
 OUTPUT_PATH = "/Users/cillinhughes/projects/blissgums/bliss-gums-blood-sugar-guide.pdf"
 COPY_PATH = "/Users/cillinhughes/projects/blissgums/digital-marketing-playbook.pdf"
+
+# ── Image Paths ─────────────────────────────────────────────
+IMAGES_DIR = "/Users/cillinhughes/projects/blissgums/images"
+COVER_IMAGE = os.path.join(IMAGES_DIR, "cover.jpg")
+CHAPTER_IMAGES = {
+    "01": os.path.join(IMAGES_DIR, "glucose-monitor.jpg"),
+    "03": os.path.join(IMAGES_DIR, "healthy-food.jpg"),
+    "04": os.path.join(IMAGES_DIR, "meal-prep.jpg"),
+    "05": os.path.join(IMAGES_DIR, "exercise.jpg"),
+    "07": os.path.join(IMAGES_DIR, "supplements.jpg"),
+    "08": os.path.join(IMAGES_DIR, "meditation.jpg"),
+}
+MAX_IMAGE_WIDTH = PAGE_WIDTH - 2 * MARGIN  # ~460pt
 
 
 # ── Chapter Content ──────────────────────────────────────────
@@ -471,6 +485,20 @@ CHAPTERS = [
 ]
 
 
+def get_scaled_image(image_path, max_width, max_height=None):
+    """Return a reportlab Image scaled to fit within max_width (and optionally max_height)."""
+    from PIL import Image as PILImage
+    with PILImage.open(image_path) as img:
+        orig_w, orig_h = img.size
+    aspect = orig_h / orig_w
+    width = max_width
+    height = width * aspect
+    if max_height and height > max_height:
+        height = max_height
+        width = height / aspect
+    return Image(image_path, width=width, height=height)
+
+
 def draw_header_bar(c, page_width, page_height):
     """Draw green header bar with BLISS GUMS text."""
     bar_height = 32
@@ -533,7 +561,13 @@ def build_cover_page(story, styles):
         textColor=MEDIUM_GRAY,
     )
     story.append(Paragraph("Diet &bull; Exercise &bull; Monitoring &bull; Wellness", subtitle_style))
-    story.append(Spacer(1, 0.6 * inch))
+    story.append(Spacer(1, 0.3 * inch))
+
+    # Cover image
+    if os.path.exists(COVER_IMAGE):
+        cover_img = get_scaled_image(COVER_IMAGE, MAX_IMAGE_WIDTH, max_height=2.5 * inch)
+        story.append(cover_img)
+        story.append(Spacer(1, 0.3 * inch))
 
     # Three feature boxes
     box_data = [["Blood Sugar", "12 Chapters", "2026 Edition"]]
@@ -555,7 +589,7 @@ def build_cover_page(story, styles):
     ]))
     story.append(box_table)
 
-    story.append(Spacer(1, 3.0 * inch))
+    story.append(Spacer(1, 0.8 * inch))
 
     # Footer info (above the bar)
     footer_style = ParagraphStyle(
@@ -682,6 +716,13 @@ def build_chapter_page(story, styles, chapter):
     ]))
     story.append(divider_table)
     story.append(Spacer(1, 0.2 * inch))
+
+    # Chapter image (if one exists for this chapter)
+    ch_num = chapter['number']
+    if ch_num in CHAPTER_IMAGES and os.path.exists(CHAPTER_IMAGES[ch_num]):
+        ch_img = get_scaled_image(CHAPTER_IMAGES[ch_num], MAX_IMAGE_WIDTH, max_height=2.2 * inch)
+        story.append(ch_img)
+        story.append(Spacer(1, 0.15 * inch))
 
     # Body styles
     body_style = ParagraphStyle(

@@ -122,7 +122,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); -web
     </div>
     <div class="order-row">
       <span class="label">Coupon</span>
-      <span class="value" style="color:var(--primary);">FREEDELIVERY applied</span>
+      <span class="value" style="color:var(--primary);" id="couponDisplay">FREEDELIVERY applied</span>
     </div>
     <div class="order-row">
       <span class="label">Total</span>
@@ -179,11 +179,13 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); -web
   const params = new URLSearchParams(window.location.search);
   const name = params.get('name') || '';
   const email = params.get('email') || '';
+  const coupon = params.get('coupon') || 'FREEDELIVERY';
   const first = name.trim().split(' ')[0];
   if (first) document.getElementById('firstName').textContent = first;
+  document.getElementById('couponDisplay').textContent = coupon + ' applied';
   const accountLink = document.getElementById('accountLink');
   if (accountLink) {
-    accountLink.href = 'account.html?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&purchased=true';
+    accountLink.href = 'account.html?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&purchased=true&coupon=' + encodeURIComponent(coupon);
   }
 })();
 </script>

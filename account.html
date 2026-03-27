@@ -132,7 +132,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); -web
       <h2>Your Coupon</h2>
       <p>This coupon refreshes automatically and can be reused at any time.</p>
       <div class="coupon-display">
-        <span class="code">FREEDELIVERY</span>
+        <span class="code" id="couponCode">FREEDELIVERY</span>
         <span class="status">Active — Ready to use</span>
       </div>
     </div>
@@ -171,6 +171,8 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); -web
   const p = new URLSearchParams(window.location.search);
   const name = p.get('name') || '';
   const email = p.get('email') || '';
+  const coupon = p.get('coupon') || 'FREEDELIVERY';
+  document.getElementById('couponCode').textContent = coupon;
   const first = name.trim().split(' ')[0];
   const parts = name.trim().split(/\s+/);
   const initials = parts.map(w => w[0]?.toUpperCase() || '').join('').slice(0,2) || '--';

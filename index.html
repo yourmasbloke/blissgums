@@ -205,10 +205,10 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 
       <div class="coupon-pill">
         <div>
-          <div class="coupon-label">Coupon applied</div>
-          <div class="coupon-code">FREEDELIVERY</div>
+          <div class="coupon-label" id="couponLabel">Enter your email below</div>
+          <div class="coupon-code" id="couponCode">—</div>
         </div>
-        <div class="coupon-status">✓ Active</div>
+        <div class="coupon-status" id="couponStatus">Waiting...</div>
       </div>
 
       <form id="checkoutForm" onsubmit="handleSubmit(event)">
@@ -302,14 +302,49 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 </footer>
 
 <script>
+function generateCoupon(email) {
+  let hash = 0;
+  for (let i = 0; i < email.length; i++) {
+    const char = email.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  let h = Math.abs(hash);
+  for (let i = 0; i < 5; i++) {
+    code += chars[h % chars.length];
+    h = Math.floor(h / chars.length);
+  }
+  return 'BG-' + code;
+}
+
+document.getElementById('email').addEventListener('input', function() {
+  var email = this.value.trim();
+  var labelEl = document.getElementById('couponLabel');
+  var codeEl = document.getElementById('couponCode');
+  var statusEl = document.getElementById('couponStatus');
+  if (email && email.includes('@') && email.includes('.')) {
+    var code = generateCoupon(email);
+    labelEl.textContent = 'Coupon applied';
+    codeEl.textContent = code;
+    statusEl.textContent = '✓ Active';
+  } else {
+    labelEl.textContent = 'Enter your email below';
+    codeEl.textContent = '—';
+    statusEl.textContent = 'Waiting...';
+  }
+});
+
 function handleSubmit(e) {
   e.preventDefault();
   const first = document.getElementById('firstName').value.trim();
   const last = document.getElementById('lastName').value.trim();
   const email = document.getElementById('email').value.trim();
+  const coupon = (email && email.includes('@') && email.includes('.')) ? generateCoupon(email) : 'FREEDELIVERY';
   const name = encodeURIComponent(first + ' ' + last);
   const enc = encodeURIComponent(email);
-  window.location.href = 'thank-you.html?name=' + name + '&email=' + enc + '&purchased=true';
+  window.location.href = 'thank-you.html?name=' + name + '&email=' + enc + '&purchased=true&coupon=' + encodeURIComponent(coupon);
 }
 </script>
 
