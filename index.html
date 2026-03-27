@@ -233,9 +233,9 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
       <div class="checkout-card-subtitle">PDF · 12 pages · Instant digital delivery</div>
 
       <div class="price-row">
-        <span class="price-original">$1.58</span>
-        <span class="price-free">FREE</span>
-        <span class="price-badge">100% OFF</span>
+        <span class="price-original" style="text-decoration: none;" id="priceDisplay">$1.58</span>
+        <span class="price-free" id="priceFree" style="display:none;">FREE</span>
+        <span class="price-badge" id="priceBadge" style="display:none;">100% OFF</span>
       </div>
 
       <div class="coupon-pill">
@@ -261,7 +261,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="jane@example.com" required>
         </div>
-        <button type="submit" class="submit-btn">Get My Free Guide →</button>
+        <button type="submit" class="submit-btn" id="submitBtn">Complete Purchase — $1.58</button>
       </form>
 
       <div class="secure-line">
@@ -337,30 +337,36 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 </footer>
 
 <script>
-function generateCoupon(seed) {
-  let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    const char = seed.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash;
-  }
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let code = '';
-  let h = Math.abs(hash);
-  for (let i = 0; i < 5; i++) {
-    code += chars[h % chars.length];
-    h = Math.floor(h / chars.length);
-  }
-  return 'BG-' + code;
-}
-
+var validCoupons = ['BLISSGUM20', 'SALE20', 'BLISSY20'];
 var sessionCoupon = '';
+var couponValid = false;
 
 document.getElementById('couponCode').addEventListener('input', function() {
   sessionCoupon = this.value.trim().toUpperCase();
   this.value = sessionCoupon;
   var statusEl = document.getElementById('couponStatus');
-  statusEl.textContent = sessionCoupon ? '✓ Applied' : '';
+  var priceDisplay = document.getElementById('priceDisplay');
+  var priceFree = document.getElementById('priceFree');
+  var priceBadge = document.getElementById('priceBadge');
+  var submitBtn = document.getElementById('submitBtn');
+
+  couponValid = validCoupons.indexOf(sessionCoupon) !== -1;
+
+  if (couponValid) {
+    statusEl.textContent = '✓ Code applied';
+    statusEl.style.color = '#059669';
+    priceDisplay.style.textDecoration = 'line-through';
+    priceFree.style.display = '';
+    priceBadge.style.display = '';
+    submitBtn.textContent = 'Get My Free Guide →';
+  } else {
+    statusEl.textContent = sessionCoupon ? '✗ Invalid code' : '';
+    statusEl.style.color = sessionCoupon ? '#dc2626' : '';
+    priceDisplay.style.textDecoration = 'none';
+    priceFree.style.display = 'none';
+    priceBadge.style.display = 'none';
+    submitBtn.textContent = 'Complete Purchase — $1.58';
+  }
 });
 
 function handleSubmit(e) {
