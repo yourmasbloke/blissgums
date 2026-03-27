@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Bliss Gums</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #059669; --primary-dark: #047857; --primary-light: #d1fae5;
+  --primary-bg: #f0fdf4; --ink: #111827; --text: #374151; --muted: #6b7280;
+  --border: #e5e7eb; --bg: #f9fafb; --white: #ffffff;
+  --sans: 'Poppins', -apple-system, sans-serif;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: center; }
+.nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo svg { width: 30px; height: 30px; }
+.nav-wordmark { font-size: 18px; font-weight: 700; color: var(--ink); }
+.nav-wordmark span { color: var(--primary); }
+
+.hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 64px 24px; text-align: center; }
+.success-icon { width: 72px; height: 72px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.success-icon svg { width: 36px; height: 36px; color: white; }
+.hero h1 { font-size: 36px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.5px; }
+.hero p { font-size: 16px; color: var(--muted); max-width: 440px; margin: 0 auto; }
+
+.content { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.order-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
+.order-card-title { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.order-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.order-row:last-child { border-bottom: none; }
+.order-row .label { color: var(--muted); }
+.order-row .value { font-weight: 600; color: var(--ink); }
+.order-row .free { color: var(--primary); font-weight: 700; }
+.order-row .strike { text-decoration: line-through; color: var(--muted); font-weight: 400; margin-right: 6px; }
+
+.download-card { background: var(--primary); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.download-info h3 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 4px; }
+.download-info p { font-size: 13px; color: rgba(255,255,255,0.75); }
+.download-btn { padding: 13px 28px; background: white; color: var(--primary-dark); font-size: 14px; font-weight: 700; font-family: var(--sans); border: none; border-radius: 8px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; display: inline-block; }
+.download-btn:hover { opacity: 0.92; }
+
+.links-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.link-card { flex: 1; min-width: 180px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; transition: border-color 0.2s; }
+.link-card:hover { border-color: var(--primary); }
+.link-card h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.link-card p { font-size: 12px; color: var(--muted); }
+
+.footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); }
+.footer p { font-size: 12px; color: var(--muted); }
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#059669"/>
+        <path d="M16 7C16 7 9 11.5 9 17.5C9 21.1 12.1 24 16 24C19.9 24 23 21.1 23 17.5C23 11.5 16 7 16 7Z" fill="white" opacity="0.9"/>
+        <path d="M16 12C16 12 13 14.5 13 17.5C13 19.4 14.3 21 16 21C17.7 21 19 19.4 19 17.5C19 14.5 16 12 16 12Z" fill="#059669"/>
+      </svg>
+    </div>
+    <span class="nav-wordmark">Bliss<span>Gums</span></span>
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h1>You're all set, <span id="firstName">there</span>!</h1>
+  <p>Your free guide is ready to download below. Check your email for a copy too.</p>
+</div>
+
+<div class="content">
+
+  <div class="download-card">
+    <div class="download-info">
+      <h3>The Complete Guide to Managing High Blood Sugar</h3>
+      <p>PDF · 12 pages · 2026 Edition · Ready to download</p>
+    </div>
+    <a href="digital-marketing-playbook.pdf" download class="download-btn">Download PDF →</a>
+  </div>
+
+  <div class="order-card">
+    <div class="order-card-title">Order Summary</div>
+    <div class="order-row">
+      <span class="label">Product</span>
+      <span class="value">High Blood Sugar Guide (PDF)</span>
+    </div>
+    <div class="order-row">
+      <span class="label">Coupon</span>
+      <span class="value" style="color:var(--primary);">FREEDELIVERY applied</span>
+    </div>
+    <div class="order-row">
+      <span class="label">Total</span>
+      <span class="value"><span class="strike">$1.58</span><span class="free">$0.00</span></span>
+    </div>
+    <div class="order-row">
+      <span class="label">Delivery</span>
+      <span class="value">Instant digital download</span>
+    </div>
+  </div>
+
+  <div class="links-row">
+    <a href="account.html" id="accountLink" class="link-card">
+      <h4>Your Account</h4>
+      <p>View your downloads and order history any time.</p>
+    </a>
+    <a href="support.html" class="link-card">
+      <h4>Need Help?</h4>
+      <p>Our support team is here if you have any questions.</p>
+    </a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>© 2026 Bliss Gums LLC. Wyoming, United States. &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html">Terms</a> &nbsp;·&nbsp; <a href="refund-policy.html">Refund Policy</a></p>
+</footer>
+
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name') || '';
+  const email = params.get('email') || '';
+  const first = name.trim().split(' ')[0];
+  if (first) document.getElementById('firstName').textContent = first;
+  const accountLink = document.getElementById('accountLink');
+  if (accountLink) {
+    accountLink.href = 'account.html?name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&purchased=true';
+  }
+})();
+</script>
+
+</body>
+</html>

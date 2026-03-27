@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bliss Gums — Natural Support for Healthy Blood Sugar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #059669; --primary-dark: #047857; --primary-light: #d1fae5;
+  --primary-bg: #f0fdf4; --ink: #111827; --text: #374151; --muted: #6b7280;
+  --border: #e5e7eb; --bg: #f9fafb; --white: #ffffff; --red: #dc2626;
+  --sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body { font-family: var(--sans); background: var(--white); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { display: flex; align-items: center; gap: 8px; }
+.nav-logo svg { width: 32px; height: 32px; }
+.nav-wordmark { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.3px; }
+.nav-wordmark span { color: var(--primary); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* HERO */
+.hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 72px 40px; text-align: center; }
+.hero-badge { display: inline-block; background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--ink); line-height: 1.15; max-width: 720px; margin: 0 auto 16px; letter-spacing: -0.5px; }
+.hero h1 em { color: var(--primary); font-style: normal; }
+.hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+/* MAIN CONTENT */
+.main { max-width: 1080px; margin: 0 auto; padding: 64px 40px; display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: start; }
+@media (max-width: 860px) { .main { grid-template-columns: 1fr; } }
+
+/* PRODUCT INFO */
+.product-info h2 { font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.3px; }
+.product-info .tagline { font-size: 15px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+
+.book-cover {
+  width: 100%; max-width: 300px; aspect-ratio: 3/4;
+  background: linear-gradient(160deg, #065f46 0%, #059669 60%, #34d399 100%);
+  border-radius: 8px; padding: 36px 28px; margin-bottom: 36px;
+  box-shadow: 8px 12px 32px rgba(5,150,105,0.25), 2px 4px 8px rgba(0,0,0,0.1);
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.book-cover::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+.book-cover::after { content: ''; position: absolute; bottom: -20px; left: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+.book-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.book-title { font-size: 20px; font-weight: 700; color: white; line-height: 1.3; }
+.book-sub { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.book-edition { font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+.what-inside h3 { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.chapter-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.chapter-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text); line-height: 1.5; }
+.chapter-list li::before { content: ''; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+
+/* CHECKOUT CARD */
+.checkout-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); position: sticky; top: 80px; }
+.checkout-card-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.checkout-card-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+
+.price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.price-original { font-size: 20px; color: var(--muted); text-decoration: line-through; }
+.price-free { font-size: 32px; font-weight: 700; color: var(--ink); }
+.price-badge { background: #dcfce7; color: #14532d; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.5px; }
+
+.coupon-pill { display: flex; align-items: center; justify-content: space-between; background: #f0fdf4; border: 1.5px dashed var(--primary); border-radius: 8px; padding: 10px 16px; margin-bottom: 24px; }
+.coupon-pill .coupon-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+.coupon-pill .coupon-code { font-family: 'Courier New', monospace; font-size: 14px; font-weight: 700; color: var(--primary-dark); letter-spacing: 1px; }
+.coupon-pill .coupon-status { font-size: 11px; color: var(--primary); font-weight: 600; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.2px; }
+.form-group input { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-family: var(--sans); color: var(--ink); background: var(--bg); transition: border-color 0.2s; outline: none; }
+.form-group input:focus { border-color: var(--primary); background: var(--white); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.submit-btn { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: var(--sans); cursor: pointer; transition: background 0.2s; margin-top: 6px; letter-spacing: 0.3px; }
+.submit-btn:hover { background: var(--primary-dark); }
+
+.secure-line { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 14px; font-size: 12px; color: var(--muted); }
+.secure-line svg { width: 13px; height: 13px; color: var(--muted); flex-shrink: 0; }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.delivery-note { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.delivery-note strong { color: var(--text); }
+
+/* BENEFITS */
+.benefits { background: var(--bg); padding: 72px 40px; }
+.benefits-inner { max-width: 1080px; margin: 0 auto; }
+.benefits h2 { font-size: 28px; font-weight: 700; color: var(--ink); text-align: center; margin-bottom: 8px; letter-spacing: -0.3px; }
+.benefits .sub { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 48px; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 700px) { .benefits-grid { grid-template-columns: 1fr; } }
+.benefit-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+.benefit-icon { width: 44px; height: 44px; background: var(--primary-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.benefit-icon svg { width: 22px; height: 22px; color: var(--primary); }
+.benefit-card h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.benefit-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* FOOTER */
+.footer { background: var(--ink); padding: 48px 40px; }
+.footer-inner { max-width: 1080px; margin: 0 auto; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 36px; gap: 32px; flex-wrap: wrap; }
+.footer-brand .name { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
+.footer-brand .tagline { font-size: 12px; color: #6b7280; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { color: #9ca3af; text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+.footer-bottom { border-top: 1px solid #1f2937; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 12px; color: #4b5563; }
+.footer-bottom .legal { display: flex; gap: 16px; }
+.footer-bottom .legal a { font-size: 12px; color: #4b5563; text-decoration: none; }
+.footer-bottom .legal a:hover { color: #9ca3af; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#059669"/>
+        <path d="M16 7C16 7 9 11.5 9 17.5C9 21.1 12.1 24 16 24C19.9 24 23 21.1 23 17.5C23 11.5 16 7 16 7Z" fill="white" opacity="0.9"/>
+        <path d="M16 12C16 12 13 14.5 13 17.5C13 19.4 14.3 21 16 21C17.7 21 19 19.4 19 17.5C19 14.5 16 12 16 12Z" fill="#059669"/>
+      </svg>
+    </div>
+    <span class="nav-wordmark">Bliss<span>Gums</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="support.html">Support</a>
+    <a href="account.html">Account</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Free Digital Guide — Limited Time</div>
+  <h1>Take Control of Your <em>Blood Sugar</em> Naturally</h1>
+  <p>Download our complete evidence-based guide and discover practical strategies to support healthy glucose levels every day.</p>
+</div>
+
+<div class="main">
+
+  <!-- Left: Product Info -->
+  <div class="product-info">
+
+    <div class="book-cover">
+      <div>
+        <div class="book-label">Bliss Gums — 2026 Edition</div>
+      </div>
+      <div>
+        <div class="book-title">The Complete Guide to Managing High Blood Sugar</div>
+        <div class="book-sub" style="margin-top:10px;">Evidence-based strategies for daily glucose support</div>
+      </div>
+      <div class="book-edition">PDF · 12 Pages · Digital Download</div>
+    </div>
+
+    <h2>What You'll Learn Inside</h2>
+    <p class="tagline">Written for people managing blood sugar day-to-day — practical, clear, and actionable.</p>
+
+    <div class="what-inside">
+      <h3>Guide Contents</h3>
+      <ul class="chapter-list">
+        <li>Understanding how blood sugar levels work and why they fluctuate</li>
+        <li>Foods that spike glucose vs. foods that stabilise it</li>
+        <li>Simple meal-timing strategies to reduce post-meal spikes</li>
+        <li>Exercise routines proven to improve insulin sensitivity</li>
+        <li>How sleep and stress directly impact your glucose</li>
+        <li>Natural supplements with clinical evidence behind them</li>
+        <li>How to read and interpret your glucose monitor readings</li>
+        <li>A 7-day starter meal plan with blood-sugar-friendly recipes</li>
+        <li>When to consult a healthcare professional — and what to ask</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Right: Checkout Card -->
+  <div>
+    <div class="checkout-card">
+      <div class="checkout-card-title">The Complete Guide to Managing High Blood Sugar</div>
+      <div class="checkout-card-subtitle">PDF · 12 pages · Instant digital delivery</div>
+
+      <div class="price-row">
+        <span class="price-original">$1.58</span>
+        <span class="price-free">FREE</span>
+        <span class="price-badge">100% OFF</span>
+      </div>
+
+      <div class="coupon-pill">
+        <div>
+          <div class="coupon-label">Coupon applied</div>
+          <div class="coupon-code">FREEDELIVERY</div>
+        </div>
+        <div class="coupon-status">✓ Active</div>
+      </div>
+
+      <form id="checkoutForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <button type="submit" class="submit-btn">Get My Free Guide →</button>
+      </form>
+
+      <div class="secure-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Secure checkout — no payment required
+      </div>
+
+      <hr class="divider">
+
+      <p class="delivery-note">
+        <strong>Instant delivery.</strong> Your guide will be available immediately after submitting. By continuing you agree to our <a href="terms-of-service.html" style="color:var(--primary);">Terms of Service</a> and <a href="privacy-policy.html" style="color:var(--primary);">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="benefits">
+  <div class="benefits-inner">
+    <h2>Why Thousands Trust Bliss Gums</h2>
+    <p class="sub">Simple, science-backed health support for everyday people.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Evidence-Based Content</h3>
+        <p>Every recommendation in our guide is grounded in published clinical research on blood sugar management and metabolic health.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>Instant Access</h3>
+        <p>Download immediately after signing up. No waiting, no shipping. Your PDF guide is ready the moment you submit.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>100% Free</h3>
+        <p>Our coupon code <strong>FREEDELIVERY</strong> is automatically applied. You pay absolutely nothing — no credit card required.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">BlissGums</div>
+        <div class="tagline">Natural Support for Healthy Blood Sugar · blissgums.co</div>
+      </div>
+      <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="account.html">Account</a>
+        <a href="refund-policy.html">Refund Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="cookie-policy.html">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bliss Gums LLC. Wyoming, United States. All rights reserved.</p>
+      <div class="legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const first = document.getElementById('firstName').value.trim();
+  const last = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const name = encodeURIComponent(first + ' ' + last);
+  const enc = encodeURIComponent(email);
+  window.location.href = 'thank-you.html?name=' + name + '&email=' + enc + '&purchased=true';
+}
+</script>
+
+</body>
+</html>
