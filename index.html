@@ -240,10 +240,10 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 
       <div class="coupon-pill">
         <div>
-          <div class="coupon-label">COUPON APPLIED</div>
-          <input type="text" class="coupon-code" id="couponCode" value="..." spellcheck="false" autocomplete="off">
+          <div class="coupon-label">COUPON CODE</div>
+          <input type="text" class="coupon-code" id="couponCode" value="" placeholder="Enter code" spellcheck="false" autocomplete="off">
         </div>
-        <div class="coupon-status" id="couponStatus">✓ $0.00 checkout</div>
+        <div class="coupon-status" id="couponStatus"></div>
       </div>
 
       <form id="checkoutForm" onsubmit="handleSubmit(event)">
@@ -354,24 +354,13 @@ function generateCoupon(seed) {
   return 'BG-' + code;
 }
 
-// Generate unique session coupon on page load
-var sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-var sessionCoupon = generateCoupon(sessionId);
-document.getElementById('couponCode').value = sessionCoupon;
+var sessionCoupon = '';
 
-document.getElementById('email').addEventListener('input', function() {
-  var email = this.value.trim();
-  var codeEl = document.getElementById('couponCode');
+document.getElementById('couponCode').addEventListener('input', function() {
+  sessionCoupon = this.value.trim().toUpperCase();
+  this.value = sessionCoupon;
   var statusEl = document.getElementById('couponStatus');
-  if (email && email.includes('@') && email.includes('.')) {
-    sessionCoupon = generateCoupon(email);
-    codeEl.value = sessionCoupon;
-    statusEl.textContent = '✓ Active';
-  } else {
-    sessionCoupon = generateCoupon(sessionId);
-    codeEl.value = sessionCoupon;
-    statusEl.textContent = '✓ Auto-applied';
-  }
+  statusEl.textContent = sessionCoupon ? '✓ Applied' : '';
 });
 
 function handleSubmit(e) {
