@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#059669">
+<meta name="description" content="Download your free guide to managing high blood sugar. Evidence-based strategies for daily glucose support from Bliss Gums.">
 <title>Bliss Gums — Natural Support for Healthy Blood Sugar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +24,15 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 .nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
 .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo { display: flex; align-items: center; gap: 8px; }
-.nav-logo svg { width: 32px; height: 32px; }
+.nav-logo svg { width: 30px; height: 30px; }
 .nav-wordmark { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -0.3px; }
 .nav-wordmark span { color: var(--primary); }
 .nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; position: relative; }
 .nav-links a:hover { color: var(--primary); }
+.nav-links a.active { color: var(--primary); }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.2s; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
 /* HERO */
 .hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 72px 40px; text-align: center; }
@@ -108,7 +114,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
 .benefit-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
 /* FOOTER */
-.footer { background: var(--ink); padding: 48px 40px; }
+.footer { background: #111827; padding: 48px 40px; }
 .footer-inner { max-width: 1080px; margin: 0 auto; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 36px; gap: 32px; flex-wrap: wrap; }
 .footer-brand .name { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
@@ -137,6 +143,7 @@ body { font-family: var(--sans); background: var(--white); color: var(--text); -
     <span class="nav-wordmark">Bliss<span>Gums</span></span>
   </a>
   <div class="nav-links">
+    <a href="index.html">Home</a>
     <a href="support.html">Support</a>
     <a href="account.html">Account</a>
   </div>
@@ -304,6 +311,17 @@ function handleSubmit(e) {
   const enc = encodeURIComponent(email);
   window.location.href = 'thank-you.html?name=' + name + '&email=' + enc + '&purchased=true';
 }
+</script>
+
+<div id="cookieBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#111827; color:#9ca3af; padding:16px 40px; font-size:13px; z-index:9999; border-top:1px solid #1f2937; font-family:'Poppins',sans-serif;">
+  <div style="max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <span>We use cookies to improve your experience. By continuing to use this site, you agree to our <a href="cookie-policy.html" style="color:#059669; text-decoration:none;">Cookie Policy</a>.</span>
+    <button onclick="acceptCookies()" style="background:#059669; color:white; border:none; padding:8px 20px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; font-family:'Poppins',sans-serif; white-space:nowrap;">Accept Cookies</button>
+  </div>
+</div>
+<script>
+if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'block'; }
+function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
 </script>
 
 </body>
